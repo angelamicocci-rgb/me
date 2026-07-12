@@ -6,96 +6,127 @@
 <title>Angela Micocci | AI • Cloud • Security</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
+:root{
+  --bg:#f4f7fb;
+  --muted:#6b7280;
+  --primary-500:#0F6CBD;
+  --primary-400:#49A7F5;
+  --card:#ffffff;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:#f4f7fb;color:#1f2937;line-height:1.6}
+html,body{height:100%}
+body{font-family:Inter,sans-serif;background:var(--bg);color:#111827;line-height:1.6;-webkit-font-smoothing:antialiased}
+/* Modern header */
 header{
-background:linear-gradient(135deg,#0F6CBD,#49A7F5);
-color:white;
-padding:90px 8%;
+  position:relative;
+  overflow:hidden;
+  color:white;
+  padding:48px 6%;
+  background:linear-gradient(135deg,var(--primary-500),var(--primary-400));
 }
-.hero{display:flex;align-items:center;justify-content:space-between;gap:60px;flex-wrap:wrap}
-.hero img{width:260px;height:260px;border-radius:50%;object-fit:cover;border:7px solid rgba(255,255,255,.9);box-shadow:0 20px 40px rgba(0,0,0,.25)}
-.hero-text{max-width:650px}
-.hero h1{font-size:3.4rem;font-weight:800;margin-bottom:10px}
-.hero h2{font-size:1.4rem;font-weight:400;margin-bottom:25px;opacity:.95}
-.buttons a{
-display:inline-block;
-padding:14px 24px;
-margin:6px;
-border-radius:40px;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
+header .nav{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
 }
-.primary{background:#fff;color:#0F6CBD}
-.secondary{border:2px solid #fff;color:#fff}
-.buttons a:hover{transform:translateY(-3px)}
-main{max-width:1200px;margin:auto;padding:70px 8%}
-section{margin-bottom:70px}
-h3{font-size:2rem;color:#0F6CBD;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:25px}
-.card{
-background:white;
-padding:28px;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-transition:.3s;
+.header-brand{display:flex;align-items:center;gap:14px}
+.logo{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,0.12);display:inline-flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 6px 18px rgba(15,108,189,0.18)}
+.header-brand h1{font-size:1.05rem;font-weight:700;color:#fff}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px;transition:background .18s}
+.nav-links a:hover{background:rgba(255,255,255,0.06)}
+/* CTA in nav */
+.nav-cta a{background:white;color:var(--primary-500);padding:8px 14px;border-radius:12px;font-weight:700;text-decoration:none}
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:center}
+.hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));padding:28px;border-radius:16px;backdrop-filter:blur(6px);box-shadow:0 20px 40px rgba(2,6,23,0.18)}
+.hero h2{font-size:2.4rem;font-weight:800;margin-bottom:8px}
+.hero p.lead{font-size:1.05rem;color:rgba(255,255,255,0.92);margin-bottom:18px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+.btn.btn-light{background:white;color:var(--primary-500)}
+.btn.btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,0.18);color:white}
+.profile-wrap{display:flex;align-items:center;justify-content:center}
+.profile{width:220px;height:220px;border-radius:28px;object-fit:cover;border:8px solid rgba(255,255,255,0.9);box-shadow:0 30px 50px rgba(13,71,161,0.18)}
+/* Decorative blob */
+.header-decor{position:absolute;right:-80px;top:-80px;opacity:0.18;filter:blur(18px)}
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .profile{width:160px;height:160px;border-radius:999px}
+  header{padding:36px 6%}
 }
-.card:hover{transform:translateY(-6px)}
-.timeline{
-border-left:4px solid #0F6CBD;
-padding-left:25px
-}
-.timeline div{margin-bottom:28px}
-.badges span{
-display:inline-block;
-background:#e9f3ff;
-color:#0F6CBD;
-padding:10px 18px;
-border-radius:25px;
-margin:6px;
-font-weight:600
-}
-footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:45px 20px
-}
-footer a{color:#7fc7ff;text-decoration:none}
+/* Rest of page kept minimal and compatible */
+main{max-width:1100px;margin:32px auto;padding:36px 6%}
+section{margin-bottom:48px}
+h3{font-size:1.5rem;color:var(--primary-500);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+.timeline{border-left:3px solid var(--primary-500);padding-left:18px}
+.badges span{display:inline-block;background:#e9f3ff;color:var(--primary-500);padding:8px 14px;border-radius:18px;margin:6px;font-weight:600}
+footer{background:#0b1220;color:white;text-align:center;padding:36px 20px;border-top-left-radius:12px;border-top-right-radius:12px}
+footer a{color:#9fe0ff;text-decoration:none}
 </style>
 </head>
 <body>
 
 <header>
-<div class="hero">
-<div class="hero-text">
-<h1>Angela Micocci</h1>
-<h2>Customer Success Account Manager @ Microsoft<br>
-Helping organizations accelerate AI, Cloud & Security transformation through innovation, accessibility and customer success.</h2>
+  <div class="nav">
+    <div class="header-brand">
+      <div class="logo" aria-hidden="true">AM</div>
+      <h1>Angela Micocci</h1>
+    </div>
 
-<div class="buttons">
-<a class="primary" href="https://www.linkedin.com/in/angelamicocci/" target="_blank">LinkedIn</a>
-<a class="secondary" href="mailto:angelamicocci@hotmail.com">Contact Me</a>
-</div>
-</div>
+    <div class="nav-links">
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#speaking">Speaking</a>
+      </nav>
+      <div class="nav-cta" style="margin-left:8px">
+        <a href="https://www.linkedin.com/in/angelamicocci/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
 
-<img src="profile.jpg" alt="Angela Micocci">
-</div>
+  <div class="hero">
+    <div class="hero-card">
+      <h2>Angela Micocci</h2>
+      <p class="lead">Customer Success Account Manager @ Microsoft — I help organizations accelerate AI, Cloud & Security transformation through innovation, accessibility and customer success.</p>
+      <div class="cta-row">
+        <a class="btn btn-light" href="mailto:angelamicocci@hotmail.com">Contact Me</a>
+        <a class="btn btn-outline" href="#expertise">My Work</a>
+      </div>
+    </div>
+
+    <div class="profile-wrap">
+      <img class="profile" src="profile.jpg" alt="Photo of Angela Micocci">
+    </div>
+  </div>
+
+  <!-- Decorative gradient blob -->
+  <svg class="header-decor" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" x2="1">
+        <stop offset="0%" stop-color="#0F6CBD" stop-opacity="1" />
+        <stop offset="100%" stop-color="#49A7F5" stop-opacity="1" />
+      </linearGradient>
+    </defs>
+    <circle cx="210" cy="210" r="160" fill="url(#g1)" />
+  </svg>
+
 </header>
 
 <main>
 
-<section>
+<section id="about">
 <h3>About Me</h3>
 <p>
-Technology leader with extensive experience across Motorola, Schneider Electric and Microsoft.
+Technology leader with more than 18 years of experience across Motorola, Schneider Electric and Microsoft.
 I help organizations unlock business value through AI, Cloud, Security and Responsible Innovation.
 Alongside my corporate role, I actively contribute to communities as speaker, mentor and accessibility advocate.
 </p>
 </section>
 
-<section>
+<section id="expertise">
 <h3>Areas of Expertise</h3>
 
 <div class="grid">
@@ -123,7 +154,7 @@ Alongside my corporate role, I actively contribute to communities as speaker, me
 </div>
 </section>
 
-<section>
+<section id="journey">
 
 <h3>Career Journey</h3>
 
@@ -153,7 +184,7 @@ Project Leader & Software Engineer delivering mobile software solutions across i
 
 </section>
 
-<section>
+<section id="speaking">
 
 <h3>Community & Speaking</h3>
 
